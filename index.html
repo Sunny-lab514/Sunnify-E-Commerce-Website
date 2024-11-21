@@ -220,16 +220,18 @@ header {
             vegetables: "vegetable_newpage.html",
             fruits: "fruits_newpage.html",
             bakery: "bakery_newpage.html",
-            cleaning: "cleaning_items_newpage.html,
+            cleaning: "cleaning_items_newpage.html",
             // Add more categories as needed
         };
-
-                function toggleSearchBar() {
-            const searchBar = document.getElementById("search-bar");
-            searchBar.classList.toggle("active");
-        }
-
-       
+        function toggleSearchBar() {
+    const searchBar = document.getElementById("search-bar");
+    if (searchBar.classList.contains("active")) {
+        searchBar.classList.remove("active");
+    } else {
+        searchBar.classList.add("active");
+        searchBar.focus(); // Focus the input for better user experience
+    }
+}
         function searchProducts(event) {
             const searchQuery = document.getElementById("search-bar").value.toLowerCase();
             const searchResults = document.getElementById("search-results");
